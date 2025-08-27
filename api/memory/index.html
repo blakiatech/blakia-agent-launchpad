@@ -1,0 +1,2931 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://blakiatech.github.io/blakia-agent-launchpad/api/memory/">
+      
+      
+        <link rel="prev" href="../core/">
+      
+      
+        <link rel="next" href="../adapters/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Memoria - Blakia Agent Launchpad</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#memoria" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Blakia Agent Launchpad" class="md-header__button md-logo" aria-label="Blakia Agent Launchpad" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blakia Agent Launchpad
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Memoria
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/blakiatech/blakia-agent-launchpad" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    blakiatech/blakia-agent-launchpad
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Blakia Agent Launchpad" class="md-nav__button md-logo" aria-label="Blakia Agent Launchpad" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Blakia Agent Launchpad
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/blakiatech/blakia-agent-launchpad" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    blakiatech/blakia-agent-launchpad
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Memoria
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memoria
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore" class="md-nav__link">
+    <span class="md-ellipsis">
+      HistoryStore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HistoryStore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemoryManager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MemoryManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      stores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.save_from_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_from_result
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.in_memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      in_memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="in_memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.memory_store" class="md-nav__link">
+    <span class="md-ellipsis">
+      memory_store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      InMemoryHistory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InMemoryHistory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.add" class="md-nav__link">
+    <span class="md-ellipsis">
+      add
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.redis_store" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_store
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="redis_store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore" class="md-nav__link">
+    <span class="md-ellipsis">
+      RedisWindowStore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RedisWindowStore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.redis_client" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.redis_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_history
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="redis_history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      RedisHistory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RedisHistory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.session_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      session_id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.redis_client" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.codec" class="md-nav__link">
+    <span class="md-ellipsis">
+      codec
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="codec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.dumps_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      dumps_list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.loads_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      loads_list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.dump_one_message_to_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      dump_one_message_to_json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.attach_model_dump_json_shim" class="md-nav__link">
+    <span class="md-ellipsis">
+      attach_model_dump_json_shim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.processors" class="md-nav__link">
+    <span class="md-ellipsis">
+      processors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="processors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.processors.keep_recent_messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      keep_recent_messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.processors.strip_tool_traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      strip_tool_traffic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adapters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adapters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Infra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Puertos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore" class="md-nav__link">
+    <span class="md-ellipsis">
+      HistoryStore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HistoryStore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.HistoryStore.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemoryManager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MemoryManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      stores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.save_from_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_from_result
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.manager.MemoryManager.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.in_memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      in_memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="in_memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.memory_store" class="md-nav__link">
+    <span class="md-ellipsis">
+      memory_store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      InMemoryHistory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InMemoryHistory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.add" class="md-nav__link">
+    <span class="md-ellipsis">
+      add
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.in_memory.InMemoryHistory.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.redis_store" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_store
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="redis_store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore" class="md-nav__link">
+    <span class="md-ellipsis">
+      RedisWindowStore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RedisWindowStore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.redis_client" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_store.RedisWindowStore.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.redis_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_history
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="redis_history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      RedisHistory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RedisHistory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.session_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      session_id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.redis_client" class="md-nav__link">
+    <span class="md-ellipsis">
+      redis_client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.redis_history.RedisHistory.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.codec" class="md-nav__link">
+    <span class="md-ellipsis">
+      codec
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="codec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.dumps_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      dumps_list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.loads_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      loads_list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.dump_one_message_to_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      dump_one_message_to_json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.codec.attach_model_dump_json_shim" class="md-nav__link">
+    <span class="md-ellipsis">
+      attach_model_dump_json_shim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core.memory.processors" class="md-nav__link">
+    <span class="md-ellipsis">
+      processors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="processors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.processors.keep_recent_messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      keep_recent_messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core.memory.processors.strip_tool_traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      strip_tool_traffic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/blakiatech/blakia-agent-launchpad/edit/master/docs/api/memory.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="memoria">Memoria</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="core.memory.manager" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">core.memory.manager</span>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="core.memory.manager.HistoryStore" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">HistoryStore</span>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="typing.Protocol">Protocol</span></code></p>
+
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HistoryStore</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span> <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.manager.HistoryStore.get" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.manager.HistoryStore.set" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">set</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">set</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="n">messages</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.manager.HistoryStore.clear" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">clear</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">clear</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="core.memory.manager.MemoryManager" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">MemoryManager</span>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Coordina acceso a una o varias stores de historial.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MemoryManager</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Coordina acceso a una o varias stores de historial.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">store</span><span class="p">:</span> <span class="n">HistoryStore</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">HistoryStore</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">store</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stores</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">HistoryStore</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stores</span> <span class="o">=</span> <span class="n">store</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stores</span> <span class="o">=</span> <span class="p">[</span><span class="n">store</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stores</span><span class="p">:</span>
+            <span class="n">messages</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">messages</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">messages</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">save_from_result</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">all_messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">],</span> <span class="n">MAX_HISTORY</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+        <span class="n">cleaned</span> <span class="o">=</span> <span class="n">strip_tool_traffic</span><span class="p">(</span><span class="n">all_messages</span><span class="p">)</span>
+        <span class="n">cropped</span> <span class="o">=</span> <span class="k">await</span> <span class="n">keep_recent_messages</span><span class="p">(</span><span class="n">cleaned</span><span class="p">,</span> <span class="n">MAX_HISTORY</span><span class="o">=</span><span class="n">MAX_HISTORY</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stores</span><span class="p">:</span>
+            <span class="n">store</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">cropped</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cropped</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stores</span><span class="p">:</span>
+            <span class="n">store</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="core.memory.manager.MemoryManager.stores" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">stores</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">stores</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.manager.MemoryManager.load" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">load</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">load</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stores</span><span class="p">:</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">messages</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">messages</span>
+    <span class="k">return</span> <span class="p">[]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.manager.MemoryManager.save_from_result" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">save_from_result</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">save_from_result</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">all_messages</span><span class="p">,</span> <span class="n">MAX_HISTORY</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">save_from_result</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">all_messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">],</span> <span class="n">MAX_HISTORY</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">strip_tool_traffic</span><span class="p">(</span><span class="n">all_messages</span><span class="p">)</span>
+    <span class="n">cropped</span> <span class="o">=</span> <span class="k">await</span> <span class="n">keep_recent_messages</span><span class="p">(</span><span class="n">cleaned</span><span class="p">,</span> <span class="n">MAX_HISTORY</span><span class="o">=</span><span class="n">MAX_HISTORY</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stores</span><span class="p">:</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">cropped</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cropped</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.manager.MemoryManager.reset" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">reset</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">reset</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/manager.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stores</span><span class="p">:</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="core.memory.in_memory" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">core.memory.in_memory</span>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="core.memory.in_memory.memory_store" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">memory_store</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">memory_store</span> <span class="o">=</span> <span class="n">InMemoryHistory</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="core.memory.in_memory.InMemoryHistory" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">InMemoryHistory</span>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/core/memory/in_memory.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">InMemoryHistory</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># clave: session_id -&gt; lista de ModelMessage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="c1"># devuelve SIEMPRE una lista (copia para no “pisarla” fuera)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="p">[]))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">messages</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="c1"># Asegura que hay una lista REAL dentro del diccionario</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">bucket</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bucket</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+
+    <span class="c1"># Muy útil para guardar el historial completo de golpe</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">messages</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">messages</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.in_memory.InMemoryHistory.get" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/in_memory.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="c1"># devuelve SIEMPRE una lista (copia para no “pisarla” fuera)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="p">[]))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.in_memory.InMemoryHistory.add" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">add</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">add</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="n">messages</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/in_memory.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">messages</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="c1"># Asegura que hay una lista REAL dentro del diccionario</span>
+    <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">bucket</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bucket</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.in_memory.InMemoryHistory.set" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">set</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">set</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="n">messages</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/in_memory.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">messages</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">messages</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.in_memory.InMemoryHistory.clear" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">clear</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">clear</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/in_memory.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_store</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="core.memory.redis_store" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">core.memory.redis_store</span>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Almacenamiento de ventana de conversación en Redis.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="core.memory.redis_store.RedisWindowStore" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">RedisWindowStore</span>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="HistoryStore (core.memory.manager.HistoryStore)" href="#core.memory.manager.HistoryStore">HistoryStore</a></code></p>
+
+
+        <p>Persistencia sencilla de mensajes usando Redis (un JSON por item).</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/core/memory/redis_store.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">RedisWindowStore</span><span class="p">(</span><span class="n">HistoryStore</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Persistencia sencilla de mensajes usando Redis (un JSON por item).&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">redis_client</span><span class="p">:</span> <span class="n">Redis</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis_client</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="s2">&quot;list[str | bytes]&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">lrange</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">loads_list</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+        <span class="n">payloads</span> <span class="o">=</span> <span class="n">dumps_list</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">payloads</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">rpush</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="o">*</span><span class="n">payloads</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="core.memory.redis_store.RedisWindowStore.redis_client" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">redis_client</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis_client</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.redis_store.RedisWindowStore.get" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/redis_store.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="s2">&quot;list[str | bytes]&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">lrange</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">loads_list</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.redis_store.RedisWindowStore.set" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">set</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">set</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">messages</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/redis_store.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+    <span class="n">payloads</span> <span class="o">=</span> <span class="n">dumps_list</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">payloads</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">rpush</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="o">*</span><span class="n">payloads</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.redis_store.RedisWindowStore.clear" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">clear</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">clear</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/redis_store.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="core.memory.redis_history" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">core.memory.redis_history</span>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="core.memory.redis_history.RedisHistory" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">RedisHistory</span>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="HistoryStore (core.memory.manager.HistoryStore)" href="#core.memory.manager.HistoryStore">HistoryStore</a></code></p>
+
+
+        <p>Historial por sesión en Redis usando lista (un JSON por item).
+Implementa HistoryStore (get/set/clear) y expone _load/_save como compat.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/core/memory/redis_history.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">RedisHistory</span><span class="p">(</span><span class="n">HistoryStore</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Historial por sesión en Redis usando lista (un JSON por item).</span>
+<span class="sd">    Implementa HistoryStore (get/set/clear) y expone _load/_save como compat.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">redis_client</span><span class="p">:</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span> <span class="o">=</span> <span class="n">session_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis_client</span>
+
+    <span class="c1"># --- Interfaz HistoryStore ---</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">sid</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">:</span>
+            <span class="c1"># historial atado a un session_id concreto</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+            <span class="s2">&quot;list[str | bytes]&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">lrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">loads_list</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sid</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">)</span>
+        <span class="n">payloads</span> <span class="o">=</span> <span class="n">dumps_list</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">payloads</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">rpush</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">,</span> <span class="o">*</span><span class="n">payloads</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sid</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">)</span>
+
+    <span class="c1"># --- Compatibilidad con el código/tests existentes ---</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">,</span> <span class="n">messages</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="core.memory.redis_history.RedisHistory.session_id" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">session_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">session_id</span> <span class="o">=</span> <span class="n">session_id</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="core.memory.redis_history.RedisHistory.redis_client" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">redis_client</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis_client</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.redis_history.RedisHistory.get" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/redis_history.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">sid</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">:</span>
+        <span class="c1"># historial atado a un session_id concreto</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+        <span class="s2">&quot;list[str | bytes]&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">lrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">loads_list</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.redis_history.RedisHistory.set" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">set</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">set</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="n">messages</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/redis_history.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sid</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">)</span>
+    <span class="n">payloads</span> <span class="o">=</span> <span class="n">dumps_list</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">payloads</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">rpush</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">,</span> <span class="o">*</span><span class="n">payloads</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="core.memory.redis_history.RedisHistory.clear" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">clear</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">clear</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/redis_history.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sid</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">redis_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="core.memory.codec" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">core.memory.codec</span>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Este módulo proporciona funciones para serializar y deserializar mensajes
+utilizando JSON, facilitando la comunicación entre componentes.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="core.memory.codec.dumps_list" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">dumps_list</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">dumps_list</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Convierte una lista de ModelMessage en una lista de strings JSON,
+uno por mensaje (formato objeto JSON).</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/codec.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dumps_list</span><span class="p">(</span><span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convierte una lista de ModelMessage en una lista de strings JSON,</span>
+<span class="sd">    uno por mensaje (formato objeto JSON).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">messages</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">arr_bytes</span> <span class="o">=</span> <span class="n">ModelMessagesTypeAdapter</span><span class="o">.</span><span class="n">dump_json</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>  <span class="c1"># b&#39;[ {...}, {...} ]&#39;</span>
+    <span class="n">objs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">arr_bytes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">objs</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="core.memory.codec.loads_list" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">loads_list</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">loads_list</span><span class="p">(</span><span class="n">raw_items</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Convierte una lista de strings/bytes JSON (uno por mensaje) en ModelMessage[].
+Tolerante a bytes y a algunos errores de parseo.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/codec.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">loads_list</span><span class="p">(</span><span class="n">raw_items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convierte una lista de strings/bytes JSON (uno por mensaje) en ModelMessage[].</span>
+<span class="sd">    Tolerante a bytes y a algunos errores de parseo.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">raw</span> <span class="ow">in</span> <span class="n">raw_items</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">raw</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">bytearray</span><span class="p">))</span>
+            <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">ModelMessagesTypeAdapter</span><span class="o">.</span><span class="n">validate_python</span><span class="p">([</span><span class="n">obj</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="c1"># fallback si viene raro pero casi-json</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">ModelMessagesTypeAdapter</span><span class="o">.</span><span class="n">validate_json</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="core.memory.codec.dump_one_message_to_json" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">dump_one_message_to_json</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">dump_one_message_to_json</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Serializa un único mensaje a JSON objeto (string) usando el adapter de lista.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/codec.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dump_one_message_to_json</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n">ModelMessage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Serializa un único mensaje a JSON objeto (string) usando el adapter de lista.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">dumps_list</span><span class="p">([</span><span class="n">msg</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="core.memory.codec.attach_model_dump_json_shim" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">attach_model_dump_json_shim</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">attach_model_dump_json_shim</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Añade .model_dump_json() a ModelRequest/ModelResponse (y Tool* si existen)
+sin romper si ya existe. Permite comparaciones en tests.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/codec.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">attach_model_dump_json_shim</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Añade .model_dump_json() a ModelRequest/ModelResponse (y Tool* si existen)</span>
+<span class="sd">    sin romper si ya existe. Permite comparaciones en tests.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_attach</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;model_dump_json&quot;</span><span class="p">):</span>
+
+            <span class="k">def</span><span class="w"> </span><span class="nf">_model_dump_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">dump_one_message_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;model_dump_json&quot;</span><span class="p">,</span> <span class="n">_model_dump_json</span><span class="p">)</span>
+
+    <span class="n">_TOOL_CLASSES</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="k">for</span> <span class="n">_cls</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ModelRequest</span><span class="p">,</span> <span class="n">ModelResponse</span><span class="p">)</span> <span class="o">+</span> <span class="n">_TOOL_CLASSES</span><span class="p">:</span>
+        <span class="n">_attach</span><span class="p">(</span><span class="n">_cls</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="core.memory.processors" class="doc doc-heading">
+            <span class="doc doc-object-name doc-module-name">core.memory.processors</span>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Processor for message cleaning</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="core.memory.processors.keep_recent_messages" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">keep_recent_messages</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">keep_recent_messages</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">MAX_HISTORY</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/processors.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">keep_recent_messages</span><span class="p">(</span><span class="n">messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">],</span> <span class="n">MAX_HISTORY</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="n">messages</span><span class="p">[</span><span class="o">-</span><span class="n">MAX_HISTORY</span><span class="p">:]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_HISTORY</span> <span class="k">else</span> <span class="n">messages</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="core.memory.processors.strip_tool_traffic" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">strip_tool_traffic</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">strip_tool_traffic</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/core/memory/processors.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">strip_tool_traffic</span><span class="p">(</span><span class="n">messages</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]:</span>
+    <span class="n">cleaned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ModelMessage</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">ModelResponse</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ToolCallPart</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">parts</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">ModelRequest</span><span class="p">):</span>
+            <span class="n">pruned_parts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span>
+                <span class="n">SystemPromptPart</span> <span class="o">|</span> <span class="n">UserPromptPart</span> <span class="o">|</span> <span class="n">ToolReturnPart</span> <span class="o">|</span> <span class="n">RetryPromptPart</span>
+            <span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">parts</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="p">(</span><span class="n">SystemPromptPart</span><span class="p">,</span> <span class="n">UserPromptPart</span><span class="p">))</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="n">pruned_parts</span><span class="p">:</span>
+                <span class="n">cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ModelRequest</span><span class="p">(</span><span class="n">parts</span><span class="o">=</span><span class="n">pruned_parts</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">cleaned</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
