@@ -1,8 +1,5 @@
 # 🚀 Blakia Agent Launchpad
 
-[![CI](https://github.com/blakiatech/blakia-agent-launchpad/actions/workflows/test.yml/badge.svg)](https://github.com/tu-org/blakia-agent-launchpad/actions/workflows/test.yml)
-[![Coverage](https://blakiatech.github.io/blakia-agent-launchpad/badges/coverage.svg)](https://tu-org.github.io/blakia-agent-launchpad/htmlcov/index.html)
-
 **Blakia Agent Launchpad** es un **boilerplate industrial** para construir agentes de IA modernos con **[Pydantic-AI](https://github.com/pydantic/pydantic-ai)** y **[LangGraph](https://www.langchain.com/langgraph)**.
 
 Incluye todo lo necesario para arrancar un proyecto en minutos:
