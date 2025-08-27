@@ -10,6 +10,7 @@ omit =
     src/infrastructure/*
     src/observability/*
     src/configuration.py
+    src/ports/*
     */__init__.py
 
 [report]

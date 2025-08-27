@@ -36,3 +36,6 @@ site/
 # Docker
 *.log
 
+
+# MkDocs build
+site/
