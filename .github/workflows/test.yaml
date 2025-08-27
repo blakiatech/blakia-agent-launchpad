@@ -1,0 +1,124 @@
+name: tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - "**/*.md"
+      - "**/.gitignore"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  lint-type:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install ruff==0.6.8 mypy==1.17.1 pydantic==2.* pydantic-core==2.* prometheus_client
+
+      - name: Ruff
+        run: ruff check src tests
+
+      - name: Mypy (sobre src)
+        env:
+          PYTHONPATH: src
+        run: mypy
+
+  unit-tests:
+    needs: [lint-type]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov pytest-asyncio pytest-mock fakeredis httpx
+
+      - name: Run tests
+        env:
+          USE_TEST_MODEL: "1"
+          OPENAI_API_KEY: dummy
+          TELEGRAM_BOT_TOKEN: dummy
+          EMPRESAS_API_TOKEN: dummy
+          WHATSAPP_TOKEN: dummy
+          WHATSAPP_PHONE_ID: dummy
+          WHATSAPP_VERIFY_TOKEN: dummy
+          META_APP_SECRET: dummy
+          VERIFY_WEBHOOK_SIGNATURE: "false"
+          REDIS_HOST: localhost
+          REDIS_PORT: "6379"
+          REDIS_DB: "0"
+          REDIS_PASSWORD: ""
+          OTEL_TRACES_EXPORTER: none
+          OTEL_METRICS_EXPORTER: none
+          OTEL_LOGS_EXPORTER: none
+          LANGFUSE_HOST: ""
+          LANGFUSE_PUBLIC_KEY: ""
+          LANGFUSE_SECRET_KEY: ""
+          PYTHONPATH: src
+        run: |
+          pytest tests \
+            -q --maxfail=1 \
+            --cov=src --cov-branch \
+            --cov-report=xml --cov-report=term-missing --cov-report=html \
+            --junitxml=junit.xml \
+            --cov-fail-under=80
+
+      - name: Upload coverage artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: |
+            junit.xml
+            coverage.xml
+            htmlcov
+
+      - name: Generate coverage badge (genbadge)
+        run: |
+          python -m pip install --quiet genbadge[all]
+          mkdir -p badges site public public/htmlcov
+          genbadge coverage -i coverage.xml -o badges/coverage.svg
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Coverage report</title>
+          <h1>Coverage</h1>
+          <p><img src="/badges/coverage.svg" alt="coverage badge"></p>
+          <p><a href="/htmlcov/index.html">➡ Ver informe HTML</a></p>
+          HTML
+          cp -r badges public/
+          cp -r htmlcov/* public/htmlcov/
+          cp -r site/* public/
+
+      - name: Upload site artifact (coverage + badge)
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: public

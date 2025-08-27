@@ -1,0 +1,18 @@
+[run]
+branch = true
+source = src
+omit =
+    */tests/*
+    */__init__.py
+    */site-packages/*
+    /usr/*
+    src/adapters/*
+    src/infrastructure/*
+    src/observability/*
+    src/configuration.py
+    */__init__.py
+
+[report]
+skip_covered = True
+show_missing = True
+

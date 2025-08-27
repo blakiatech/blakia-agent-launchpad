@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blakia-agent-launchpad"
+version = "0.1.0"
+description = "Plantilla minimal para lanzar agentes (LangGraph + pydantic-ai) con FastAPI."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = [
+  # --- Core API / App ---
+  "fastapi",
+  "uvicorn[standard]",
+  "httpx",
+  "redis",
+
+  # --- Agent framework ---
+  "pydantic-ai",
+  "langgraph",
+  "pydantic-settings",
+  "python-dotenv",
+
+  # --- LLM providers (ajusta según uses) ---
+  "openai",
+
+  # --- Canales / Adapters ---
+  "python-telegram-bot",
+
+  # --- Observabilidad ---
+  "langfuse",
+  "opentelemetry-sdk>=1.26",
+  "logfire",
+]
+
+# Extras opcionales (instálalos con `.[dev]`, etc.)
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-asyncio",
+  "pytest-cov",
+  "fakeredis",
+  "mypy",
+  "ruff",
+  # tipos opcionales útiles si los quieres:
+  "types-redis",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+# (Opcional) Si quieres mover la config de pytest.ini aquí:
+# [tool.pytest.ini_options]
+# testpaths = ["tests"]
+# addopts = "-q --cov=core --cov-report=term-missing"
+# asyncio_mode = "strict"
+
+# (Opcional) Config de ruff/mypy si algún día quieres migrarlas aquí:
+# [tool.mypy]
+# python_version = "3.10"
+# check_untyped_defs = true
+# strict_optional = true
+#
+# [tool.ruff]
+# line-length = 100
+# target-version = "py310"

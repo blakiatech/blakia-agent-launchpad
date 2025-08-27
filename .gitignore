@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*.local
+
+# Coverage / pytest
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+.pytest_cache/
+junit.xml
+
+# Build / dist
+build/
+dist/
+
+# CI-generated site
+public/
+badges/
+site/
+
+# Editors / OS
+*.swp
+*.swo
+.DS_Store
+.idea/
+.vscode/
+
+# Docker
+*.log
+
