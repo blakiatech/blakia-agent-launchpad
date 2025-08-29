@@ -4,8 +4,7 @@ from pydantic.dataclasses import dataclass
 from typing import Optional, Any
 
 import httpx
-from ports.outbound import CatalogSender
-
+from ports.messages import MessageSender
 @dataclass(config=dict(arbitrary_types_allowed=True))
 class Deps:
     http: Optional[httpx.AsyncClient] = None
@@ -19,7 +18,7 @@ class Deps:
 
     # Campos opcionales que podrías querer inyectar más tarde
     empresas_api_token: Optional[str] = None
-    catalog_sender: Optional[CatalogSender] = None
+    message_sender: Optional[MessageSender] = None
 
     # Cualquier otro state o config libre
     extra: Any = None

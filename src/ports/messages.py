@@ -1,6 +1,6 @@
 # src/ports/messages.py
 from __future__ import annotations
-from typing import Protocol, TypedDict, Iterable, Optional
+from typing import TypedDict, Iterable, Optional
 
 
 class Action(TypedDict, total=False):
@@ -17,7 +17,10 @@ class Card(TypedDict, total=False):
     actions: list[Action]
 
 
-class MessageSender(Protocol):
-    async def send_text(self, chat_id: str, text: str) -> None: ...
-    async def send_cards(self, chat_id: str, cards: Iterable[Card]) -> None: ...
+class MessageSender:
+    async def send_text(self, chat_id: str, text: str) -> None:
+        raise NotImplementedError
+
+    async def send_cards(self, chat_id: str, cards: Iterable[Card]) -> None:
+        raise NotImplementedError
 

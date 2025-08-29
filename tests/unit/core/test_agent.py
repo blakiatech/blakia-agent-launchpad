@@ -26,7 +26,7 @@ def mock_deps() -> Deps:
         openai_api_key="dummy",
         telegram_bot_token="dummy",
         empresas_api_token=None,
-        catalog_sender=None,
+        message_sender=None,
         model=None,  # opcional
     )
 
